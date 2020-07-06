@@ -1,8 +1,62 @@
+
+
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif; }
+  margin: 50px;
+  padding: 0px;
+  font-family: Montserrat;
+  font-size: 16px;
+}
 
 a {
-  color: #00B7FF; }
+  color: #2FB2BA;
+  text-decoration: none; }
+
+nav {
+  font-family: "Rubik Mono One";
+  display: flex;
+  justify-content: space-between; 
+  align-items: center;
+}
+
+nav ul {
+  display: flex;
+  justify-content: space-evenly;
+  padding: 0;
+  margin: 0 10px;
+}
+
+nav ul li {
+  padding: 0 30px;
+  list-style: none;
+}
+
+
+.signup {
+  color: #DE8A40;
+}
+
+.main {
+  display: flex;
+  justify-content: space-around;
+}
+
+.whatwedo {
+  width: 400px;
+  margin-top: 8rem;
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+
+button {
+  font-size: 1.3rem;
+  background-color: #2FB2BA;
+  border-style: none;
+  padding: 15px;
+  border-radius: 12px;}
+
+button a {
+  color: white;
+  font-weight: 700;
+}
 
 /*# sourceMappingURL=style.css.map */
