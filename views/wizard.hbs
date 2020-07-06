@@ -1,48 +1,52 @@
 <form action="/wizard" method="post"></form>
-  <fieldset class = "brewing-method"></div>
+  <div class = "brewing-method">
     <legend>How do you brew your coffee?</legend>
-    
-    <div>
-      <img src="images/mokkapot.svg" alt="mokka icon">
-      <label for="mokka">Mokka Pot</label>
-      <input type="checkbox" id="mokka" name="mokka-pot" value="mokka-pot">
-    </div>
-    
-    <div>
-      <img src="images/v60.svg" alt="v60 icon">
-      <label for="v60">V60</label>
-      <input type="checkbox" id="v60" name="v60" value="v60">
-    </div>
-    <div>
-      <img src="images/frenchpress.svg" alt="french-press icon">
-      <label for="french-press">Mokka Pot</label>
-      <input type="checkbox" id="french-press" name="french-press" value="french-press">
-    </div>
 
-    <div>
-      <img src="images/aeropress.svg" alt="aero-press icon">
-      <label for="aero-press">Aero Press</label>
-      <input type="checkbox" id="aero-press" name="aero-press" value="aero-press">
-    </div>
+    <div class = "form-wrapper">
+      <div>
+        <img src="images/mokkapot.svg" alt="mokka icon">
+        <label for="mokka">Mokka Pot</label>
+        <input type="checkbox" id="mokka" name="mokka-pot" value="mokka-pot">
+      </div>
+      
+      <div>
+        <img src="images/v60.svg" alt="v60 icon">
+        <label for="v60">V60</label>
+        <input type="checkbox" id="v60" name="v60" value="v60">
+      </div>
 
-    <div>
-      <img src="images/chemex.svg" alt="chemex icon">
-      <label for="chemex">Chemex</label>
-      <input type="checkbox" id="chemex" name="chemex" value="chemex">
+      <div>
+        <img src="images/frenchpress.svg" alt="french-press icon">
+        <label for="french-press">Mokka Pot</label>
+        <input type="checkbox" id="french-press" name="french-press" value="french-press">
+      </div>
+
+      <div>
+        <img src="images/aeropress.svg" alt="aero-press icon">
+        <label for="aero-press">Aero Press</label>
+        <input type="checkbox" id="aero-press" name="aero-press" value="aero-press">
+      </div>
+
+      <div>
+        <img src="images/chemex.svg" alt="chemex icon">
+        <label for="chemex">Chemex</label>
+        <input type="checkbox" id="chemex" name="chemex" value="chemex">
+      </div>
+
+      <div>
+        <img src="images/espresso.svg" alt="espresso-machine icon">
+        <label for="espresso-machine">Espresso Machine</label>
+        <input type="checkbox" id="espresso-machine" name="espresso-machine" value="espresso-machine">
+      </div>
     </div>
-    <div>
-      <img src="images/espresso.svg" alt="espresso-machine icon">
-      <label for="espresso-machine">Espresso Machine</label>
-      <input type="checkbox" id="espresso-machine" name="espresso-machine" value="espresso-machine">
-    </div>  
     
     <button>Next</button>
-  </fieldset>
+  </div>
 
-  <fieldset class = "acidity-strength"></div>
+  <div class = "acidity-strength">
     <legend>Please choose your preferred acidity and strength levels</legend>
     
-    <div>
+    <div class="form-wrapper">
       <label for="acidity">Acidity</label>
       <input type="radio" id="acidity" name="acidity" value="1">
       <input type="radio" id="acidity" name="acidity" value="2">
@@ -59,12 +63,12 @@
     </div>
 
     <button>Next</button>
-  </fieldset>
+  </div>
 
-  <fieldset class = "taste-characteristics"></div>
+  <div class = "taste-characteristics">
     <legend>Please choose your preferred taste characteristics</legend>
     
-    <div>
+    <div class = "form-wrapper">
       <label for="nutty">Nutty</label>
       <input type="checkbox" id="nutty" name="nutty" value="nutty">
 
@@ -82,6 +86,6 @@
     </div>
     
     <button type="submit">Filter</button>
-  </fieldset>
+  </div>
 
 </form>
