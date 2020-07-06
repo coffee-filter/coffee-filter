@@ -7,7 +7,13 @@ const roasterSchema = new Schema({
     brandname: String,
     logo: String,
     description: String,
-    location: String
+    location: String,
+    coffees: [
+        {
+            type: Schema.Types.ObjectId,
+            ref: 'Coffee'
+        }
+    ]
 })
 
 const Roaster = mongoose.model('Roaster', roasterSchema);
