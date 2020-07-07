@@ -6,4 +6,8 @@ router.get('/wizard', (req, res, next) => {
   res.render('wizard');
 });
 
+router.post('/wizard', (req, res, next) => {
+  res.send('hello')
+})
+
 module.exports = router;
