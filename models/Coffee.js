@@ -20,7 +20,7 @@ const coffeeSchema = new Schema({
     },
     method: {
         type: [String],
-        enum: ["Mokka Pot", "V60", "French Press", "Aereo Press", "Chemex", "Espresso Machine"]
+        enum: ["mokkapot", "v60", "frenchpress", "aeropress", "chemex", "espressomachine"]
     },
     price: Number,
     tasteProfile: {

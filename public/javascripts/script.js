@@ -1,15 +1,14 @@
 document.querySelector('.acidity-strength').style.display = "none";
 document.querySelector('.taste-characteristics').style.display = "none";
 
+const wizardNexts = document.querySelectorAll('a');
 
-const wizzardButtons = document.querySelectorAll('button');
-
-wizzardButtons[0].onclick = function() {
+wizardNexts[0].onclick = () => {
   document.querySelector('.brewing-method').style.display = "none";
-  document.querySelector('.acidity-strength').style.display = "inherit";
+  document.querySelector('.acidity-strength').style.display = "initial";
 }
 
-wizzardButtons[1].onclick = function() {
+wizardNexts[1].onclick = () => {
   document.querySelector('.acidity-strength').style.display = "none";
-  document.querySelector('.taste-characteristics').style.display = "inherit";
+  document.querySelector('.taste-characteristics').style.display = "initial";
 }
