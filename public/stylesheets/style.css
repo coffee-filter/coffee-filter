@@ -60,11 +60,9 @@ button a {
   font-weight: 700;
 }
 
-fieldset {
-  border-width: 0px;
-}
-
 legend {
+  margin-top: 10rem;
+  align-self: center;
   color: #2FB2BA;
   font-size: 2rem;
   font-weight: 700;
@@ -88,11 +86,49 @@ legend {
   margin: 1rem 0;
 }
  
-.brewing-method {
+.brewing-method, .acidity-strength, .taste-characteristics {
+  display: flex;
+  flex-direction: column;
+  margin: 0 7rem;
+}
+
+.brewing-method a, .acidity-strength a {
+  color: white;
+  font-size: 1.3rem;
+  background-color: #2FB2BA;
+  border-style: none;
+  padding: 15px;
+  border-radius: 12px;
+  align-self: flex-end;
+  margin-right: 5rem;
+}
+
+.brewing-method > div, .acidity-strength > div {
+  margin-top: 5rem;
+}
+
+.as-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  margin: 5rem 0;
+
+}
+
+.as-wrapper div {
   display: flex;
   flex-direction: column;
 }
 
-.brewing-method button {
-  align-self: center
+.taste-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.taste-wrapper div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 50px 0;
 }
