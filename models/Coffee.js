@@ -24,26 +24,8 @@ const coffeeSchema = new Schema({
     },
     price: Number,
     tasteProfile: {
-        nutty: {
-            type: Number,
-            enum: [1, 2, 3, 4, 5]
-        },
-        sweet: {
-            type: Number,
-            enum: [1, 2, 3, 4, 5]
-        },
-        herbal: {
-            type: Number,
-            enum: [1, 2, 3, 4, 5]
-        },
-        chocolate: {
-            type: Number,
-            enum: [1, 2, 3, 4, 5]
-        },
-        floral: {
-            type: Number,
-            enum: [1, 2, 3, 4, 5]
-        }
+        type: [String],
+        enum: ["nutty", "sweet", "herbal", "chocolate", "floral"]
     },
     roaster: {
         type: Schema.Types.ObjectId,
