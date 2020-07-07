@@ -14,7 +14,7 @@ a {
 nav {
   font-family: "Rubik Mono One";
   display: flex;
-  justify-content: space-between; 
+  justify-content: space-around; 
   align-items: center;
 }
 
@@ -68,6 +68,12 @@ legend {
   font-weight: 700;
 }
 
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  margin: 0rem 10rem;
+}
+
 .form-wrapper {
   display: flex;
   flex-direction: row;
@@ -92,7 +98,7 @@ legend {
   margin: 0 7rem;
 }
 
-.brewing-method a, .acidity-strength a {
+.brewing-method button, .acidity-strength button, .taste-characteristics button {
   color: white;
   font-size: 1.3rem;
   background-color: #2FB2BA;
@@ -111,7 +117,7 @@ legend {
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
-  margin: 5rem 0;
+  margin: 5rem 0 2rem 0;
 
 }
 
