@@ -20,6 +20,7 @@ router.post('/wizard/2', (req, res, next) => {
 })
 
 router.post('/wizard/results', (req, res, next) => {
+  console.log(req.body)
   req.body.brewingmethod = req.body.brewingmethod.split(",")
   const {brewingmethod, acidity, strength, taste} = req.body;
   Coffee.find({
