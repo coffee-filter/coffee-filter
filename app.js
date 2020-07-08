@@ -8,6 +8,11 @@ const hbs          = require('hbs');
 const mongoose     = require('mongoose');
 const logger       = require('morgan');
 const path         = require('path');
+const passport = require('passport');
+const LocalStrategy = require('passport-local').Strategy;
+const bcrypt = require('bcrypt');
+const session = require('express-session');
+const MongoStore = require('connect-mongo')(session);
 
 
 mongoose
@@ -29,6 +34,52 @@ app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
+
+
+// Passport Setup
+passport.serializeUser((roaster, done) => {
+  done(null, roaster._id)
+})
+
+passport.deserializeUser((id, done) => {
+  Roaster.findById(id)
+          .then (roaster => {
+            done(null, roaster);
+          })
+          .catch(err => done(err));
+})
+
+app.use(
+  session({
+    secret: process.env.SESSION_SECRET,
+    cookie: { maxAge: 24 * 60 * 60 * 1000 },
+    saveUninitialized: false,
+    resave: false,
+    store: new MongoStore({
+      mongooseConnection: mongoose.connection,
+      ttl: 24 * 60 * 60 * 1000
+    })
+  })
+);
+
+passport.use(
+  new LocalStrategy((username, password, done) => {
+    Roaster.findOne({username})
+            .then(found => {
+              if (found === null) {
+                done(null, false, {message: "Incorrect credentials"});
+              } else if (!bcrypt.compareSync(password, found.password)) {
+                done(null, false, {message: "Incorrect credentials"});
+              } else {
+                done(null, found);
+              }
+            })
+            .catch(err => done(err, false));
+  })
+)
+
+app.use(passport.initialize());
+app.use(passport.session());
 
 // Express View engine setup
 
@@ -56,6 +107,13 @@ app.use('/', index);
 
 const wizard = require('./routes/wizard');
 app.use('/', wizard);
+
+const dashboard = require('./routes/dashboard');
+app.use('/', dashboard);
+
+const auth = require('./routes/auth');
+const Roaster = require('./models/Roaster');
+app.use('/', auth);
 
 
 module.exports = app;
