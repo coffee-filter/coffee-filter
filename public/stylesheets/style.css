@@ -18,7 +18,7 @@ nav {
   align-items: center;
 }
 
-nav img {
+nav img, .logo {
   width: 250px;
 }
 
