@@ -1,0 +1,71 @@
+<nav>
+  <a href="/"><img src="../../images/coffeefilter2.png" alt="coffee filter logo"></a>
+  <ul>
+    <li><a href="all-coffees">All Coffees</a></li>
+    <li><a href="/all-roasters">All Roasters</a></li>
+    <li><a href="/logout" class="signup">Logout</a></li>
+  </ul>
+</nav>
+{{#with coffee}}
+<div>
+  <div>
+    <img src="{{beans.imgPath}}" alt="{{name}} image">
+    <button><a href="/">Change Coffee Image</a></button>
+  </div>
+  
+  <div>
+    <form action="/dashboard/:id/edit" method="POST">
+
+      <label for="name">name</label>
+      <input type="text" name="name" value="{{name}}"/>
+      
+      <label for="description">Description</label>
+      <input type="text" name="description" value="{{description}}"/>
+      
+      <label for="location">Location</label>
+      <input type="text" name="location" value="{{location}}"/>
+      
+      <label for="strength">Strength</label>
+      <select id="strength" name="strength">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+      </select>
+      
+      <label for="acidity">Acidity</label>
+      <select id="acidity" name="acidity">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+      </select>
+      
+      <label for="method">Brewing method</label>
+      <select id="method" name="method">
+        <option value="mokkapot">Mokka pot</option>
+        <option value="v60">V60</option>
+        <option value="frenchpress">French press</option>
+        <option value="aeropress">Aero press</option>
+        <option value="espressomachine">Espresso machine</option>
+      </select>
+
+      <label for="tasteProfile">Taste profile</label>
+      <select id="tasteProfile" name="tasteProfile">
+        <option value="nutty">Nutty</option>
+        <option value="sweet">Sweet</option>
+        <option value="herbal">Herbal</option>
+        <option value="chocolate">Chocolate</option>
+        <option value="floral">Floral</option>
+      </select>
+
+      <label for="price">Price</label>
+      <input type="text" name="price" value="{{price}}"/>
+
+      <button type="submit">Save</button>
+    </form>
+  </div>
+</div>
+{{/with}}

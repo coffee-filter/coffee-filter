@@ -11,15 +11,16 @@
 <div>
   <div>
     <img src="{{this.logo.imgPath}}" alt="{{this.brandname}} logo">
-    <a href=""><button>Edit Profile</button></a>
+    <button><a href="/dashboard/edit">Edit Profile</a></button>
   </div>
+  
   <div>
-    <button>Add New Coffee</button>
+    <button><a href="/dashboard/add">Add New Coffee</a></button>    
     {{#each coffees}}
       <div>
         <h3>{{this.name}}</h3>
-        <a href="/dashboard/edit"><button>Edit</button></a>
-        <a href="/dashboard/delete"><button>Delete</button></a>
+        <button><a href="/dashboard/{{this._id}}/edit">Edit</a></button>
+        <button><a href="/dashboard/{{this._id}}/delete">Delete</a></button>
       </div>
     {{/each}}
   </div>
