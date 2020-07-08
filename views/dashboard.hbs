@@ -1,1 +1,26 @@
-Hello {{this.username}}
+<nav>
+  <a href="/"><img src="images/coffeefilter2.png" alt="coffee filter logo"></a>
+  <ul>
+    <li><a href="all-coffees">All Coffees</a></li>
+    <li><a href="/all-roasters">All Roasters</a></li>
+    <li><a href="/logout" class="signup">Logout</a></li>
+  </ul>
+</nav>
+
+<h2>Welcome {{this.username}}</h2>
+<div>
+  <div>
+    <img src="{{this.logo.imgPath}}" alt="{{this.brandname}} logo">
+    <a href=""><button>Edit Profile</button></a>
+  </div>
+  <div>
+    {{#each coffees}}
+      <div>
+        <h3>{{this.name}}</h3>
+        <a href="/dashboard/edit"><button>Edit</button></a>
+        <a href="/dashboard/delete"><button>Delete</button></a>
+      </div>
+    {{/each}}
+  </div>
+</div>
+
