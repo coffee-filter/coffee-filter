@@ -1,0 +1,23 @@
+<nav>
+  <a href="/"><img src="../images/coffeefilter2.png" class="logo"  alt="coffee filter logo"></a>
+  <ul>
+    <li><a href="all-coffees">All Coffees</a></li>
+    <li><a href="/all-roasters">All Roasters</a></li>
+    <li><a href="/login" class="signup">Sign Up</a></li>
+  </ul>
+</nav>  
+
+<h1>All Coffees</h1>
+{{#each coffees}}
+    <img src="{{this.beans.imgPath}}" alt="{{this.name}} image">
+  <h2>{{this.name}}</h2>
+  <p>{{this.description}}</p>
+  <div>
+    <h3>Strength: {{this.strength}}</h3>
+    <h3>Acidity: {{this.acidity}}</h3>
+    <h3>Flavor: {{#each tasteProfile}}{{this}} <span> </span> {{/each}}</h3>
+    <h3>Origin: {{this.location}}</h3>
+  </div>
+  <h3>Price: {{this.price}}</h3>
+  <button>Add to Cart</button>
+{{/each}}
