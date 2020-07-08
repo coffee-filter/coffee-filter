@@ -18,6 +18,10 @@ nav {
   align-items: center;
 }
 
+nav img {
+  width: 250px;
+}
+
 nav ul {
   display: flex;
   justify-content: space-evenly;
