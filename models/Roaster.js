@@ -13,7 +13,7 @@ const roasterSchema = new Schema({
             type: Schema.Types.ObjectId,
             ref: 'Coffee'
         }
-    ]
+    ],
 })
 
 const Roaster = mongoose.model('Roaster', roasterSchema);

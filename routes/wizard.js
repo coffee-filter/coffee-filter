@@ -7,14 +7,6 @@ router.get('/wizard', (req, res, next) => {
   res.render('wizard');
 })
 
-// router.get('/wizard/2', (req, res, next) => {
-//   res.render('wizard2');
-// })
-
-// router.get('/wizard/3', (req, res, next) => {
-//   res.render('wizard3');
-// })
-
 router.post('/wizard', (req, res, next) => {
   const brewingmethod = req.body.brewingmethod;
   res.render('wizard2', {brewingmethod});
@@ -27,7 +19,7 @@ router.post('/wizard/2', (req, res, next) => {
   res.render('wizard3', {brewingmethod, acidity, strength});
 })
 
-router.post('/wizard/3', (req, res, next) => {
+router.post('/wizard/results', (req, res, next) => {
   req.body.brewingmethod = req.body.brewingmethod.split(",")
   const {brewingmethod, acidity, strength, taste} = req.body;
   Coffee.find({

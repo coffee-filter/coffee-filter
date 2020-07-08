@@ -2,7 +2,7 @@
   <a href="/"><img src="../images/coffeefilter2.png" class="logo" alt="coffee filter logo"></a>
   <a href="/"><img src="../images/equis.svg" alt="close wizard"></a>
 </div>
-<form action="/wizard/3" method="POST">
+<form action="/wizard/results" method="POST">
 
   <div class = "taste-characteristics">
     <legend>Please choose your preferred taste characteristics</legend>
@@ -33,9 +33,9 @@
       <input type="checkbox" id="floral" name="taste" value="floral">
       </div>
     </div>
-    <input type="text" name="brewingmethod" value="{{brewingmethod}}">
-    <input type="text" name="acidity" value="{{acidity}}">
-    <input type="text" name="strength" value="{{strength}}">
+    <input type="hidden" name="brewingmethod" value="{{brewingmethod}}">
+    <input type="hidden" name="acidity" value="{{acidity}}">
+    <input type="hidden" name="strength" value="{{strength}}">
     <button type="submit">Filter</button>
   </div>
 </form>
