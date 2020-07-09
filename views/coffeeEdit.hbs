@@ -1,20 +1,21 @@
 <nav>
   <a href="/"><img src="../../images/coffeefilter2.png" alt="coffee filter logo"></a>
   <ul>
-    <li><a href="all-coffees">All Coffees</a></li>
-    <li><a href="/all-roasters">All Roasters</a></li>
+    <li><a href="/allcoffees">All Coffees</a></li>
+    <li><a href="/allroasters">All Roasters</a></li>
     <li><a href="/logout" class="signup">Logout</a></li>
   </ul>
 </nav>
 
 {{#with coffee}}
-  <img src="{{imgPath}}" alt="{{name}} image">
   <div class = "coffee-order">
     <form action="/dashboard/{{_id}}/edit" method="POST" enctype="multipart/form-data">
-      
-      <div class="input">
-        <label for="photo">Photo</label>
-        <input class="centered" type="file" name="photo">
+      <div class="uploadfeature">
+        <img src="{{imgPath}}" alt="{{name}}" class="coffee-image-edit">
+        <div class="upload">
+          <label for="photo">Photo</label>
+          <input class="centered" type="file" name="photo">
+        </div>
       </div>
 
       <div class="input">
@@ -61,9 +62,9 @@
         </div>
       </div>
       
-      <div class="acc-taste-form-wrapper">
+      <div class="brewing-method-wrapper2">
         <label>Edit brewing method</label>
-        <div class = "taste-wrapper">
+        <div class="taste-wrapper">
           <div>
             <img src="../../images/mokkapot.svg" alt="mokka icon">
             <label for="mokkapot">Mokka Pot</label>
@@ -135,10 +136,10 @@
                 <input type="checkbox" id="floral" name="tasteProfile" value="floral">
               </div>
             </div>
-        </div>
+            <button type="submit" >Save</button>
+          </div>
       </div>
 
-      <button type="submit">Save</button>
     </form>
   </div>
 {{/with}}

@@ -1,15 +1,27 @@
-<lottie-player src="https://assets4.lottiefiles.com/packages/lf20_lhKAwb.json"  background="transparent"  speed="1"  style="width: 700px; height: 700px;"  loop autoplay></lottie-player>
+<nav>
+  <a href="/"><img src="../images/coffeefilter2.png" class="logo"  alt="coffee filter logo"></a>
+  <ul>
+
+    <li><a href="/allcoffees">All Coffees</a></li>
+    <li><a href="/allroasters">All Roasters</a></li>
+    <li><a href="/login" class="signup">Login</a></li>
+  </ul>
+</nav>
+
 <form action="/signup" method="POST">
-
-  <label for="username">Username</label>
-  <input type="text" name="username" required/>
-
-  <label for="password">Password</label>
-  <input type="password" name="password" required/>
-
-  {{#if message}}
-    <div>{{message}}</div>
-  {{/if}}
-
-  <button type="submit">Sign up</button>
+  <div class="signup-wrapper">
+    <img src="/images/coffee-stain.png" alt="stain" class="stain">
+    <div class="signup-right">
+      <h2>Sign up fo' free</h2>
+      <label for="username">Username</label>
+      <input type="text" name="username" required/>
+      <label for="password">Password</label>
+      <input type="password" name="password" required/>
+      {{#if message}}
+      <div>{{message}}</div>
+      {{/if}}
+      <button type="submit">Sign up</button>
+      <h2>Already a member? > <a href="/login">Login</a></h2>
+    </div>
+  </div>
 </form>

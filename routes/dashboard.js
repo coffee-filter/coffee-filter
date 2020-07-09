@@ -18,12 +18,17 @@ router.get('/dashboard/edit', loginCheck(), (req, res, next) => {
 router.post('/dashboard/edit', loginCheck(), uploader.single('photo'), (req, res, next) => {
   const {brandname, description, location, logo} = req.body;
   const roasterId = req.user._id
-  const imgPath = req.file.url;
-  const imgName = req.file.originalname;
-  Roaster.findByIdAndUpdate(roasterId, {brandname, description, location, logo, imgPath, imgName})
+  if(req.file) {
+    const imgPath = req.file.url;
+    const imgName = req.file.originalname;
+    Roaster.findByIdAndUpdate(roasterId, {brandname, description, location, logo, imgPath, imgName})
           .then(() => res.redirect('/dashboard'))
           .catch(err => next(err));
-})
+  } else {
+    Roaster.findByIdAndUpdate(roasterId, {brandname, description, location, logo})
+          .then(() => res.redirect('/dashboard'))
+          .catch(err => next(err));
+  }})
 
 router.get('/dashboard/:id/edit', loginCheck(), (req, res, next) => {
   coffeeId = req.params.id;
@@ -34,14 +39,23 @@ router.get('/dashboard/:id/edit', loginCheck(), (req, res, next) => {
         .catch(err => next(err))
 })
 
-router.post('/dashboard/:id/edit', loginCheck(), uploader.single('photo'), (req, res, next) => {
+router.post('/dashboard/:id/edit', loginCheck(), uploader.single('photo'), async(req, res, next) => {
   coffeeId = req.params.id;
-  const imgPath = req.file.url;
-  const imgName = req.file.originalname;
   const {name, description, location, strength, acidity, method, price, tasteProfile} = req.body;
-  Coffee.findByIdAndUpdate(coffeeId, {name, description, location, strength, acidity, price, method, tasteProfile, imgPath, imgName})
-        .then(() => res.redirect('/dashboard'))
-        .catch(err => next(err))
+
+  if(req.file){
+    const imgPath = req.file.url;
+    const imgName = req.file.originalname;
+  
+    Coffee.findByIdAndUpdate(coffeeId, {name, description, location, strength, acidity, price, method, tasteProfile, imgPath, imgName})
+    .then(() => res.redirect('/dashboard'))
+    .catch(err => next(err))
+  }
+  else{
+    Coffee.findByIdAndUpdate(coffeeId, {name, description, location, strength, acidity, price, method, tasteProfile})
+    .then(() => res.redirect('/dashboard'))
+    .catch(err => next(err))
+  }
 })
 
 router.get('/dashboard/:id/delete', loginCheck(), async (req, res, next) => {

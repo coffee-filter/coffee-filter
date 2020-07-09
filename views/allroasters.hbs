@@ -1,17 +1,28 @@
 <nav>
   <a href="/"><img src="../images/coffeefilter2.png" class="logo"  alt="coffee filter logo"></a>
   <ul>
-    <li><a href="allcoffees">All Coffees</a></li>
+    <li><a href="/allcoffees">All Coffees</a></li>
     <li><a href="/allroasters">All Roasters</a></li>
-    <li><a href="/login" class="signup">Sign Up</a></li>
+    <li><a href="/signup" class="signup">Sign Up</a></li>
   </ul>
 </nav>  
 
 <h1>All Roasters</h1>
-{{#each roasters}}
+{{!-- {{#each roasters}}
     <img src="{{this.imgPath}}" alt="{{this.name}}">
   <h2>{{this.name}}</h2>
   <p>{{this.description}}</p>
   <p>{{this.location}}</p>
 
+{{/each}} --}}
+
+{{#each roasters}}
+<div class = "allroasters">
+  <img src="{{this.imgPath}}" alt="{{this.brandname}}">
+  <div class = "coffee-description">
+    <h2>{{this.brandname}}</h2>
+    <p>{{this.description}}</p>
+    <p>{{this.location}}</p>
+  </div>
+</div>
 {{/each}}

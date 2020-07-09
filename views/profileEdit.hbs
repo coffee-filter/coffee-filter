@@ -1,30 +1,32 @@
 <nav>
   <a href="/"><img src="../images/coffeefilter2.png" alt="coffee filter logo"></a>
   <ul>
-    <li><a href="all-coffees">All Coffees</a></li>
-    <li><a href="/all-roasters">All Roasters</a></li>
+    <li><a href="/allcoffees">All Coffees</a></li>
+    <li><a href="/allroasters">All Roasters</a></li>
     <li><a href="/logout" class="signup">Logout</a></li>
   </ul>
 </nav>
 
-<h2>Welcome {{this.username}}</h2>
-<div>
-  <div>
-    <img src="{{imgPath}}" alt="{{this.brandname}} logo">
-  </div>
-  
-  <div>
-    <form action="/dashboard/edit" method="POST" enctype="multipart/form-data">
-      <label for="photo">Roaster Logo</label>
-      <input type="file" name="photo"> 
+<h2>Welcome {{this.username}}!</h2>
+<div class="popoto">
+<form action="/dashboard/edit" method="POST" enctype="multipart/form-data">
+    <div class="profileUploader">
+      <img src="{{imgPath}}" alt="{{this.brandname}}">
+      {{!-- <label for="photo"></label> --}}
+      <input type="file" name="photo">
+    </div>
+    <div>
       <label for="brandname">Brandname</label>
-      <input type="text" name="brandname" value="{{this.brandname}}" placeholder="add your brandname..."/>
+      <input type="text" name="brandname" value="{{this.brandname}}" placeholder="add your brandname..."/>  
+    </div>
+    <div>
       <label for="description">Description</label>
-      <input type="text" name="description" value="{{this.description}}" placeholder="add your description..."/>
+    <input type="text" name="description" value="{{this.description}}" placeholder="add your description..."/>
+    </div>
+    <div>
       <label for="location">Location</label>
       <input type="text" name="location" value="{{this.location}}" placeholder="add your location..."/>
-
-      <button type="submit">Save</button>
-    </form>
-  </div>
+    </div>
+  <button type="submit">Save</button>
 </div>
+</form>

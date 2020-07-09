@@ -1,7 +1,7 @@
 
 
 body {
-  margin: 5rem 10rem;
+  margin: 5rem 10rem 3rem 10rem;
   padding: 0px;
   font-family: Montserrat;
   font-size: 16px;
@@ -50,13 +50,18 @@ nav ul li {
   font-weight: 500;
 }
 
+.whatwedo button {
+  margin-top: 1rem;
+}
+
 button {
   color: white;
   font-size: 1.3rem;
   background-color: #2FB2BA;
   border-style: none;
   padding: 15px;
-  border-radius: 12px;}
+  border-radius: 12px;
+}
 
 button a {
   color: white;
@@ -123,6 +128,10 @@ legend {
   margin-right: 5rem;
 }
 
+.acidity-strength button {
+  margin-top: 4rem;
+}
+
 .brewing-method > div, .acidity-strength > div {
   margin-top: 5rem;
 }
@@ -144,16 +153,9 @@ legend {
   justify-content: space-evenly;
 }
 
-.taste-wrapper div {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin: 50px 0;
-}
-
 .coffee-results {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   flex-wrap: wrap;
   margin-bottom: 2rem;
 }
@@ -173,7 +175,7 @@ legend {
 
 .coffee-description {
   max-width: 45%;
-  min-width: 20rem;
+  min-width: 30rem;
   margin: 0 1rem;
 }
 
@@ -198,12 +200,27 @@ legend {
 
 .input {
   display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  margin: 0 10rem;
+}
+
+.upload {
+  display: flex;
   flex-flow: column nowrap;
+}
+
+.uploadfeature {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
 }
 
 .acc-taste-form-wrapper {
   display: flex;
-  flex-flow: column wrap;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  margin: 5rem 10rem 0 10rem;
 }
 
 .taste-wrapper label {
@@ -226,6 +243,10 @@ legend {
   flex-direction: column;
 }
 
+.dashboard-left button {
+  margin-top: 2rem;
+}
+
 .dashboard-right {
   display: flex;
   flex-direction: column;
@@ -233,8 +254,26 @@ legend {
   margin-left: 1rem;
 }
 
+.dashboard-right a {
+  align-self: center;
+  font-size: 1rem;
+  margin: 0 1rem;
+  font-family: Rubik Mono One;
+}
+
+.dashboard-right .delete {
+  color: #DE8A40;
+}
+
+.dashboard-right h3 {
+  margin-left: 1rem;
+  color: #995234;
+}
+
 .dashboard-coffees {
   display: flex;
+  background-color: #F3F3F3;
+  border-bottom: 1px solid #A0A0A0;
 }
 
 .dashboard-coffees h3 {
@@ -249,4 +288,80 @@ legend {
 
 .edit-delete-buttons {
   margin: 0.2rem;
+}
+
+.allroasters {
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.allroasters img {
+  max-width: 10rem;
+  object-fit: contain;
+  align-self: center;
+}
+
+.coffee-image-edit {
+  max-width: 10rem;
+}
+
+.brewing-method-wrapper2 {
+  display: flex;
+  flex-flow: column wrap;
+  margin: 5rem 10rem 0rem 10rem;
+}
+
+.brewing-method-wrapper2 label {
+  align-self: flex-start;
+}
+
+.coffee-button {
+  align-self: flex-end;
+}
+
+.profileedit {
+  display: flex;
+}
+
+.profileUploader img {
+  width: 10rem;
+}
+
+.profileUploader {
+  display: flex;
+  flex-flow: column wrap;
+}
+
+.popoto {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.signup-wrapper {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-evenly;
+}
+
+.signup-wrapper img {
+  max-width: 25rem;
+}
+
+.signup-right {
+  display: flex;
+  flex-flow: column wrap;
+}
+
+.signup-right button {
+  align-self: center;
+}
+
+.signup-right label {
+  font-family: "Rubik Mono One";
+  color: #995234;
+}
+
+.signup-right h2 {
+  font-family: "Rubik Mono One";
+  color: #10696E;
 }
