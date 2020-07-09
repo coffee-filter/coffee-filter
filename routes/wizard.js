@@ -20,16 +20,17 @@ router.post('/wizard/2', (req, res, next) => {
 })
 
 router.post('/wizard/results', (req, res, next) => {
-  console.log(req.body)
   req.body.brewingmethod = req.body.brewingmethod.split(",")
-  const {brewingmethod, acidity, strength, taste} = req.body;
+  const {brewingmethod, acidity, strength, taste, imgPath, imgName} = req.body;
   Coffee.find({
     method: {$in: brewingmethod},
     acidity: {$gte: acidity - 1, $lte: acidity + 1},
     strength: {$gte: strength - 1, $lte: strength + 1},
     tasteProfile: {$in: taste}
   })
-        .then(coffees => res.render('coffeeResults', {coffees}))
+        .then(coffees => {
+          res.render('coffeeResults', {coffees})
+        })
         .catch(err => next(err))
 })
 
