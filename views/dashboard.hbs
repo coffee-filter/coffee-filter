@@ -8,17 +8,18 @@
 </nav>
 
 <h2>Welcome {{this.username}}</h2>
-<div>
-  <div>
-    <img src="{{this.logo.imgPath}}" alt="{{this.brandname}} logo">
+<div class="dashboard">
+  <div class="dashboard-left">
+    <img src="{{this.imgPath}}" alt="{{this.brandname}} logo">
     <button><a href="/dashboard/edit">Edit Profile</a></button>
   </div>
   
-  <div>
-    <button><a href="/dashboard/add">Add New Coffee</a></button>    
+  <div class="dashboard-right">
+    <button class="coffee-add"><a href="/dashboard/add">Add New Coffee</a></button>    
     {{#each coffees}}
-      <div>
+      <div class="dashboard-coffees">
         <h3>{{this.name}}</h3>
+        <div class="add-delete-buttons"></div>
         <button><a href="/dashboard/{{this._id}}/edit">Edit</a></button>
         <button><a href="/dashboard/{{this._id}}/delete">Delete</a></button>
       </div>
