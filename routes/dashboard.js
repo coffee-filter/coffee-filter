@@ -15,10 +15,12 @@ router.get('/dashboard/edit', loginCheck(), (req, res, next) => {
   res.render('profileEdit', req.user)
 })
 
-router.post('/dashboard/edit', loginCheck(), (req, res, next) => {
+router.post('/dashboard/edit', loginCheck(), uploader.single('photo'), (req, res, next) => {
   const {brandname, description, location, logo} = req.body;
   const roasterId = req.user._id
-  Roaster.findByIdAndUpdate(roasterId, {brandname, description, location, logo})
+  const imgPath = req.file.url;
+  const imgName = req.file.originalname;
+  Roaster.findByIdAndUpdate(roasterId, {brandname, description, location, logo, imgPath, imgName})
           .then(() => res.redirect('/dashboard'))
           .catch(err => next(err));
 })
@@ -32,10 +34,12 @@ router.get('/dashboard/:id/edit', loginCheck(), (req, res, next) => {
         .catch(err => next(err))
 })
 
-router.post('/dashboard/:id/edit', loginCheck(), (req, res, next) => {
+router.post('/dashboard/:id/edit', loginCheck(), uploader.single('photo'), (req, res, next) => {
   coffeeId = req.params.id;
+  const imgPath = req.file.url;
+  const imgName = req.file.originalname;
   const {name, description, location, strength, acidity, method, price, tasteProfile} = req.body;
-  Coffee.findByIdAndUpdate(coffeeId, {name, description, location, strength, acidity, price, method, tasteProfile})
+  Coffee.findByIdAndUpdate(coffeeId, {name, description, location, strength, acidity, price, method, tasteProfile, imgPath, imgName})
         .then(() => res.redirect('/dashboard'))
         .catch(err => next(err))
 })
@@ -56,11 +60,13 @@ router.get('/dashboard/add', loginCheck(), async (req, res, next) => {
    res.render('coffeeAdd');
  })
 
-router.post('/dashboard/add', loginCheck(), async (req, res, next) => {
+router.post('/dashboard/add', loginCheck(), uploader.single('photo'), async (req, res, next) => {
   const {name, description, location, strength, acidity, method, price, tasteProfile} = req.body;
   const roaster = req.user._id;
+  const imgPath = req.file.url;
+  const imgName = req.file.originalname;
   try {
-    const added = await Coffee.create({name, description, location, strength, acidity, price, roaster, method, tasteProfile})
+    const added = await Coffee.create({name, description, location, strength, acidity, price, roaster, method, tasteProfile, imgPath, imgName})
     const coffee = await Coffee.findOne({name})
     const coffeeId = coffee._id
     const updated = await Roaster.findByIdAndUpdate(req.user._id, {$push: {coffees: coffeeId}})
@@ -71,43 +77,5 @@ router.post('/dashboard/add', loginCheck(), async (req, res, next) => {
   }
 })
 
-router.post('/coffeeAdd', uploader.single('photo'), (req, res, next) => {
-    const { name, description, location, strength, acidity, method, tasteProfile, price } = req.body;
-    const imgPath = req.file.url;
-    const imgName = req.file.originalname;
-    Coffee.create({ name, imgPath, imgName, description, location, strength, acidity, method, tasteProfile, price })
-                  .then(coffee => {
-                    res.redirect('/dashboard')
-                  })
-                  .catch(err => {
-                    console.log(err);
-                  })
-})
-
-router.post('/coffeeEdit', uploader.single('photo'), (req, res, next) => {
-  const { name, description, location, strength, acidity, method, tasteProfile, price } = req.body;
-  const imgPath = req.file.url;
-  const imgName = req.file.originalname;
-  Coffee.create({ name, imgPath, imgName, description, location, strength, acidity, method, tasteProfile, price })
-                .then(coffee => {
-                  res.redirect('/dashboard')
-                })
-                .catch(err => {
-                  console.log(err);
-                })
-})
-
-router.post('/profileEdit', uploader.single('photo'), (req, res, next) => {
-  const { brandname, description, location } = req.body;
-  const imgPath = req.file.url;
-  const imgName = req.file.originalname;
-  Coffee.create({ brandname, imgPath, imgName, description, location })
-                .then(coffee => {
-                  res.redirect('/dashboard')
-                })
-                .catch(err => {
-                  console.log(err);
-                })
-})
 
 module.exports = router;

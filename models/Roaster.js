@@ -5,11 +5,8 @@ const roasterSchema = new Schema({
     username: String,
     password: String,
     brandname: String,
-    logo: {
-        imgName: String,
-        imgPath: String,
-        imgPublicId: String
-    },
+    imgName: String,
+    imgPath: String,
     description: String,
     location: String,
     coffees: [

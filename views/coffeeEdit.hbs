@@ -8,14 +8,10 @@
 </nav>
 {{#with coffee}}
 <div>
-  <div>
-    <img src="{{beans.imgPath}}" alt="{{name}} image">
-    <button><a href="/">Change Coffee Image</a></button>
-  </div>
   
   <div>
     <form action="/dashboard/{{_id}}/edit" method="POST" enctype="multipart/form-data">
-
+      <img src="{{imgPath}}" alt="{{name}} image">
       <label for="photo">Coffee Image</label>
       <input type="file" name="photo"> 
 
