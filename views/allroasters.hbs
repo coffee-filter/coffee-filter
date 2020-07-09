@@ -1,25 +1,17 @@
 <nav>
   <a href="/"><img src="../images/coffeefilter2.png" class="logo"  alt="coffee filter logo"></a>
   <ul>
-
     <li><a href="allcoffees">All Coffees</a></li>
     <li><a href="/allroasters">All Roasters</a></li>
     <li><a href="/login" class="signup">Sign Up</a></li>
   </ul>
 </nav>  
 
-<h1>All Coffees</h1>
-
-{{#each coffees}}
+<h1>All Roasters</h1>
+{{#each roasters}}
     <img src="{{this.imgPath}}" alt="{{this.name}}">
   <h2>{{this.name}}</h2>
   <p>{{this.description}}</p>
-  <div>
-    <h3>Strength: {{this.strength}}</h3>
-    <h3>Acidity: {{this.acidity}}</h3>
-    <h3>Flavor: {{#each tasteProfile}}{{this}} <span> </span> {{/each}}</h3>
-    <h3>Origin: {{this.location}}</h3>
-  </div>
-  <h3>Price: {{this.price}}</h3>
-  <button>Add to Cart</button>
+  <p>{{this.location}}</p>
+
 {{/each}}
