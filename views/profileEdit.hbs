@@ -15,8 +15,9 @@
   </div>
   
   <div>
-    <form action="/dashboard/edit" method="POST">
-
+    <form action="/dashboard/edit" method="POST" enctype="multipart/form-data">
+      <label for="photo">Roaster Logo</label>
+      <input type="file" name="photo"> 
       <label for="brandname">Brandname</label>
       <input type="text" name="brandname" value="{{this.brandname}}" placeholder="add your brandname..."/>
       <label for="description">Description</label>

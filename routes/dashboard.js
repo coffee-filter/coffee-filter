@@ -3,6 +3,7 @@ const router  = express.Router();
 const Coffee = require('../models/Coffee');
 const Roaster = require('../models/Roaster');
 const {loginCheck} = require('./middlewares')
+const { uploader, cloudinary } = require("../config/cloudinary.js")
 
 
 router.get('/dashboard', loginCheck(), async (req, res, next) => {
@@ -70,5 +71,43 @@ router.post('/dashboard/add', loginCheck(), async (req, res, next) => {
   }
 })
 
+router.post('/coffeeAdd', uploader.single('photo'), (req, res, next) => {
+    const { name, description, location, strength, acidity, method, tasteProfile, price } = req.body;
+    const imgPath = req.file.url;
+    const imgName = req.file.originalname;
+    Coffee.create({ name, imgPath, imgName, description, location, strength, acidity, method, tasteProfile, price })
+                  .then(coffee => {
+                    res.redirect('/dashboard')
+                  })
+                  .catch(err => {
+                    console.log(err);
+                  })
+})
+
+router.post('/coffeeEdit', uploader.single('photo'), (req, res, next) => {
+  const { name, description, location, strength, acidity, method, tasteProfile, price } = req.body;
+  const imgPath = req.file.url;
+  const imgName = req.file.originalname;
+  Coffee.create({ name, imgPath, imgName, description, location, strength, acidity, method, tasteProfile, price })
+                .then(coffee => {
+                  res.redirect('/dashboard')
+                })
+                .catch(err => {
+                  console.log(err);
+                })
+})
+
+router.post('/profileEdit', uploader.single('photo'), (req, res, next) => {
+  const { brandname, description, location } = req.body;
+  const imgPath = req.file.url;
+  const imgName = req.file.originalname;
+  Coffee.create({ brandname, imgPath, imgName, description, location })
+                .then(coffee => {
+                  res.redirect('/dashboard')
+                })
+                .catch(err => {
+                  console.log(err);
+                })
+})
 
 module.exports = router;
