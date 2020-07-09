@@ -7,18 +7,11 @@
   </ul>
 </nav>  
 
-<h1>All Coffees</h1>
-
-{{#each coffees}}
+<h1>All Roasters</h1>
+{{#each roasters}}
     <img src="{{this.imgPath}}" alt="{{this.name}}">
   <h2>{{this.name}}</h2>
   <p>{{this.description}}</p>
-  <div>
-    <h3>Strength: {{this.strength}}</h3>
-    <h3>Acidity: {{this.acidity}}</h3>
-    <h3>Flavor: {{#each tasteProfile}}{{this}} <span> </span> {{/each}}</h3>
-    <h3>Origin: {{this.location}}</h3>
-  </div>
-  <h3>Price: {{this.price}}</h3>
-  <button>Add to Cart</button>
+  <p>{{this.location}}</p>
+
 {{/each}}
