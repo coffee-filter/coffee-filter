@@ -1,16 +1,16 @@
 <nav>
   <a href="/"><img src="images/coffeefilter2.png" alt="coffee filter logo"></a>
   <ul>
-    <li><a href="all-coffees">All Coffees</a></li>
-    <li><a href="/all-roasters">All Roasters</a></li>
+    <li><a href="/allcoffees">All Coffees</a></li>
+    <li><a href="/allroasters">All Roasters</a></li>
     <li><a href="/logout" class="signup">Logout</a></li>
   </ul>
 </nav>
 
-<h2>Welcome {{this.username}}</h2>
+<h2>Welcome {{this.username}}!</h2>
 <div class="dashboard">
   <div class="dashboard-left">
-    <img src="{{this.imgPath}}" alt="{{this.brandname}} logo">
+    <img src="{{this.imgPath}}" alt="{{this.brandname}}">
     <button><a href="/dashboard/edit">Edit Profile</a></button>
   </div>
   
@@ -20,8 +20,8 @@
       <div class="dashboard-coffees">
         <h3>{{this.name}}</h3>
         <div class="add-delete-buttons"></div>
-        <button><a href="/dashboard/{{this._id}}/edit">Edit</a></button>
-        <button><a href="/dashboard/{{this._id}}/delete">Delete</a></button>
+          <a href="/dashboard/{{this._id}}/edit">Edit</a>
+          <a href="/dashboard/{{this._id}}/delete" class="delete">Delete</a>
       </div>
     {{/each}}
   </div>
