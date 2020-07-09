@@ -3,20 +3,27 @@
   <ul>
     <li><a href="all-coffees">All Coffees</a></li>
     <li><a href="/all-roasters">All Roasters</a></li>
-    <li><a href="/login" class="signup">Sign Up</a></li>
+    <li><a href="/signup" class="signup">Sign Up</a></li>
   </ul>
 </nav>
 
+<h1>Try these coffees:</h1>
 {{#each coffees}}
+<div class = "coffee-results">
   <img src="{{this.beans.imgPath}}" alt="{{this.name}} image">
-  <h2>{{this.name}}</h2>
-  <p>{{this.description}}</p>
-  <div>
-    <h3>Strength: {{this.strength}}</h3>
-    <h3>Acidity: {{this.acidity}}</h3>
-    <h3>Flavor: {{#each tasteProfile}}{{this}} <span> </span> {{/each}}</h3>
-    <h3>Origin: {{this.location}}</h3>
+  <div class = "coffee-description">
+    <h2>{{this.name}}</h2>
+    <p>{{this.description}}</p>
+    <ul>
+      <li>Strength: {{this.strength}}/5</li>
+      <li>Acidity: {{this.acidity}}/5</li>
+      <li>Flavors: {{#each tasteProfile}}{{this}} <span> </span>{{/each}}</li>
+      <li>Origin: {{this.location}}</li>
+    </ul>
   </div>
-  <h3>Price: {{this.price}}</h3>
-  <button>Add to Cart</button>
+  <div class ="coffee-order">
+    <h3>€<span> </span>{{this.price}}</h3>
+    <button>Add to Cart</button>
+  </div>
+</div>
 {{/each}}

@@ -1,7 +1,7 @@
 
 
 body {
-  margin: 50px;
+  margin: 5rem 10rem;
   padding: 0px;
   font-family: Montserrat;
   font-size: 16px;
@@ -14,8 +14,9 @@ a {
 nav {
   font-family: "Rubik Mono One";
   display: flex;
-  justify-content: space-around; 
+  justify-content: space-between; 
   align-items: center;
+  margin-bottom: 5rem;
 }
 
 nav img, .logo {
@@ -25,12 +26,10 @@ nav img, .logo {
 nav ul {
   display: flex;
   justify-content: space-evenly;
-  padding: 0;
-  margin: 0 10px;
 }
 
 nav ul li {
-  padding: 0 30px;
+  padding-left: 2.5rem;
   list-style: none;
 }
 
@@ -152,4 +151,34 @@ legend {
   flex-direction: column;
   align-items: center;
   margin: 50px 0;
+}
+
+.coffee-results {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
+}
+
+.coffee-results img {
+  height: 15rem;
+}
+
+.coffee-results h2 {
+  color: #995234;
+}
+
+.coffee-results h3 {
+  color: #DE8A40;
+  font-size: 2rem;
+}
+
+.coffee-description {
+  max-width: 45%;
+  min-width: 20rem;
+  margin: 0 1rem;
+}
+
+.coffee-order {
+  margin-left: 1rem;
 }
