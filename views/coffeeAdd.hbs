@@ -9,7 +9,7 @@
 
 <div>
   <div>
-    <img src="{{}}" alt="{{this.name}} logo">
+    <img src="" alt="{{this.name}} logo">
     <button><a href="/">Add Coffee Image</a></button>
   </div>
   
@@ -43,28 +43,84 @@
         <option value="5">5</option>
       </select>
       
+      <div class = "taste-wrapper">
       <label for="method">Brewing method</label>
-      <select id="method" name="method">
-        <option value="mokkapot">Mokka pot</option>
-        <option value="v60">V60</option>
-        <option value="frenchpress">French press</option>
-        <option value="aeropress">Aero press</option>
-        <option value="espressomachine">Espresso machine</option>
-      </select>
+      <div>
+        <img src="../images/mokkapot.svg" alt="mokka icon">
+        <label for="mokkapot">Mokka Pot</label>
+        <input type="checkbox" id="mokkapot" name="method" value="mokkapot">
+      </div>
+      
+      <div>
+        <img src="../images/v60.svg" alt="v60 icon">
+        <label for="v60">V60</label>
+        <input type="checkbox" id="v60" name="method" value="v60">
+      </div>
 
-      <label for="tasteProfile">Taste profile</label>
-      <select id="tasteProfile" name="tasteProfile">
-        <option value="nutty">Nutty</option>
-        <option value="sweet">Sweet</option>
-        <option value="herbal">Herbal</option>
-        <option value="chocolate">Chocolate</option>
-        <option value="floral">Floral</option>
-      </select>
+      <div>
+        <img src="../images/frenchpress.svg" alt="french-press icon">
+        <label for="frenchpress">French Press</label>
+        <input type="checkbox" id="frenchpress" name="method" value="frenchpress">
+      </div>
+
+      <div>
+        <img src="../images/aeropress.svg" alt="aereo-press icon">
+        <label for="aeropress">Aero Press</label>
+        <input type="checkbox" id="aeropress" name="method" value="aeropress">
+      </div>
+
+      <div>
+        <img src="../images/chemex.svg" alt="chemex icon">
+        <label for="chemex">Chemex</label>
+        <input type="checkbox" id="chemex" name="method" value="chemex">
+      </div>
+
+      <div>
+        <img src="../images/espresso.svg" alt="espresso-machine icon">
+        <label for="espressomachine">Espresso Machine</label>
+        <input type="checkbox" id="espressomachine" name="method" value="espressomachine">
+      </div>
+    </div>
+
+      <div class = "taste-characteristics">
+    <legend>Please choose your preferred taste characteristics</legend>
+    
+    <div class = "taste-wrapper">
+      <div>
+      <img src="../images/nut.svg" alt="nutty vector">
+      <label for="nutty">Nutty</label>
+      <input type="checkbox" id="nutty" name="tasteProfile" value="nutty">
+      </div>
+
+      <div>
+      <img src="../images/grapes.svg" alt="fruity vector">  
+      <label for="sweet">Sweet</label>
+      <input type="checkbox" id="sweet" name="tasteProfile" value="sweet">
+      </div>
+
+      <div>
+      <img src="../images/basil.svg" alt="herbal vector"> 
+      <label for="herbal">Herbal</label>
+      <input type="checkbox" id="herbal" name="tasteProfile" value="herbal">
+      </div>
+
+      <div>
+      <img src="../images/chocolate-bar.svg" alt="chocolate vector">   
+      <label for="chocolate">Chocolate</label>
+      <input type="checkbox" id="chocolate" name="tasteProfile" value="chocolate">
+      </div>
+
+      <div>
+      <img src="../images/flower.svg" alt="floral vector">  
+      <label for="floral">Floral</label>
+      <input type="checkbox" id="floral" name="tasteProfile" value="floral">
+      </div>
+    </div>
 
       <label for="price">Price</label>
       <input type="text" name="price"/>
 
-      <button type="submit">Save</button>
+      <button type="submit">Add Coffee</button>
     </form>
   </div>
 </div>

@@ -22,7 +22,7 @@ const coffeeSchema = new Schema({
         type: [String],
         enum: ["mokkapot", "v60", "frenchpress", "aeropress", "chemex", "espressomachine"]
     },
-    price: Number,
+    price: String,
     tasteProfile: {
         type: [String],
         enum: ["nutty", "sweet", "herbal", "chocolate", "floral"]
