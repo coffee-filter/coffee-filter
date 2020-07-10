@@ -256,10 +256,8 @@ legend {
 }
 
 .dashboard-right a {
-  align-self: center;
-  font-size: 1rem;
-  margin: 0 1rem;
-  font-family: Rubik Mono One;
+  font-family: "Rubik Mono One";
+  margin-right: 1rem;
 }
 
 .dashboard-right .delete {
@@ -273,12 +271,11 @@ legend {
 
 .dashboard-coffees {
   display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: center;
   background-color: #F3F3F3;
   border-bottom: 1px solid #A0A0A0;
-}
-
-.dashboard-coffees h3 {
-  width: 80%;
 }
 
 .coffee-add {
@@ -288,7 +285,7 @@ legend {
 }
 
 .edit-delete-buttons {
-  margin: 0.2rem;
+  margin-left: 0.5rem;
 }
 
 .allroasters {
