@@ -29,7 +29,7 @@ nav ul {
 }
 
 nav ul li {
-  padding-left: 2.5rem;
+  margin-left: 2.5rem;
   list-style: none;
 }
 
@@ -40,12 +40,12 @@ nav ul li {
 
 .main {
   display: flex;
+  flex-flow: row wrap;
   justify-content: space-around;
 }
 
 .whatwedo {
   width: 400px;
-  margin-top: 8rem;
   font-size: 1.5rem;
   font-weight: 500;
 }
@@ -162,6 +162,7 @@ legend {
 
 .coffee-results img {
   height: 15rem;
+  align-self: center;
 }
 
 .coffee-results h2 {
@@ -175,8 +176,8 @@ legend {
 
 .coffee-description {
   max-width: 45%;
-  min-width: 30rem;
-  margin: 0 1rem;
+  min-width: 20rem;
+  margin: 0 2rem;
 }
 
 .coffee-order {
@@ -344,7 +345,8 @@ legend {
 }
 
 .signup-wrapper img {
-  max-width: 25rem;
+  width: 50%;
+  max-width: 30rem;
 }
 
 .signup-right {
@@ -364,4 +366,71 @@ legend {
 .signup-right h2 {
   font-family: "Rubik Mono One";
   color: #10696E;
+}
+
+.signup-right h3 {
+  font-family: "Rubik Mono One";
+  color: #10696E;
+  margin-top: 3rem;
+}
+
+@media (min-width: 452px) and (max-width: 864px) {
+  body {
+    margin: 1.5rem;
+  }
+
+  nav {
+    margin-bottom: 2rem;
+  }
+
+  nav ul {
+    display: flex;
+    flex-flow: column nowrap;
+  }
+
+  nav ul li {
+    margin-left: 0;
+  }
+
+  .logo {
+    width: 200px;
+  }
+
+  .signup-wrapper img {
+    margin-bottom: 2rem;
+  }
+}
+
+@media (max-width: 451px) { 
+  body {
+    margin: 1.5rem;
+  }
+
+  nav {
+    display: flex;
+    flex-flow: column wrap;
+    align-items: flex-start;
+    margin-bottom: 2rem;
+  }
+
+  nav ul {
+    display: flex;
+    flex-flow: column nowrap;
+  }
+
+  nav ul li {
+    margin-left: 0;
+  }
+
+  .logo {
+    width: 200px;
+  }
+
+  .coffee-description {
+    margin: 0;
+  }
+
+  .signup-wrapper img {
+    margin-bottom: 2rem;
+  }
 }
