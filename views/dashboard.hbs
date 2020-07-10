@@ -15,13 +15,14 @@
   </div>
   
   <div class="dashboard-right">
-    <button class="coffee-add"><a href="/dashboard/add">Add New Coffee</a></button>    
+    <button class="coffee-add"><a href="/dashboard/add">Add Coffee</a></button>    
     {{#each coffees}}
       <div class="dashboard-coffees">
         <h3>{{this.name}}</h3>
-        <div class="add-delete-buttons"></div>
+        <div class="edit-delete-buttons">
           <a href="/dashboard/{{this._id}}/edit">Edit</a>
           <a href="/dashboard/{{this._id}}/delete" class="delete">Delete</a>
+        </div>
       </div>
     {{/each}}
   </div>
